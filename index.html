@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IdeaGenSys – Always Be Ahead</title>
+  <meta name="description" content="IdeaGenSys Software delivers custom software, mobile apps, digital transformation and IT consulting that drives sustainable growth." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+ 
+  <!-- =========================================================
+       NAVIGATION
+  ========================================================= -->
+  <header class="nav-wrapper" id="navbar">
+    <nav class="nav-inner">
+      <a href="#home" class="nav-logo">
+        <!--
+          ╔══════════════════════════════════════════════════╗
+          ║  LOGO IMAGE — place your logo file here          ║
+          ║  Recommended: logo.png (transparent background)  ║
+          ║  Size: any, will be displayed at 44px height     ║
+          ╚══════════════════════════════════════════════════╝
+        -->
+        <img src="logo.jfif" alt="IdeaGenSys – Always Be Ahead" class="logo-img" />
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About Us</a></li>
+        <li><a href="#clients" class="nav-link">Clients</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#industries" class="nav-link">Industries</a></li>
+        <li><a href="#case-studies" class="nav-link">Case Studies</a></li>
+        <li><a href="#blogs" class="nav-link">Blogs</a></li>
+      </ul>
+      <a href="#contact" class="btn-contact">Contact Us <span class="btn-arrow">↗</span></a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+ 
+  <!-- =========================================================
+       HERO SLIDER
+       ─────────────────────────────────────────────────────────
+       IMAGE FILES NEEDED (place in same folder as index.html):
+         hero1.jpg  — Slide 1 background (e.g. tech/code/team photo)
+         hero2.jpg  — Slide 2 background (e.g. mobile/app photo)
+         hero3.jpg  — Slide 3 background (e.g. cloud/office photo)
+         Recommended: 1920×1080px, JPG, under 500KB each
+       If images are missing, beautiful gradient fallbacks show.
+  ========================================================= -->
+  <section class="hero-slider" id="home">
+ 
+    <!-- Slide 1 -->
+    <div class="slide active" data-bg="images/hero1.jfif">
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <div class="slide-eyebrow">Custom Software · AI · Digital Transformation</div>
+        <h1 class="slide-headline">
+           Evolving with Technology,<br/>
+			Delivering Beyond,Expectations<br/>
+			Expectations
+			<br />
+                        </h1>
+        <p class="slide-sub">
+          We transform business landscapes through custom software solutions that anticipate
+          tomorrow's challenges and exceed today's demands.
+        </p>
+        <div class="slide-cta-group">
+          <a href="#contact" class="btn-primary">Consult Our Expert <span>↗</span></a>
+          <a href="#services" class="btn-ghost">Explore Services</a>
+        </div>
+        <div class="slide-tagline">Giving your vision a smooth transition to reality.</div>
+      </div>
+    </div>
+ 
+    <!-- Slide 2 -->
+    <div class="slide" data-bg="images/hero2.jfif">
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <div class="slide-eyebrow">Mobile · Web · Enterprise Apps</div>
+        
+		<h1 class="slide-headline">
+ Building Future-Ready
+    Digital Solutions<br />
+     for Ambitious Businesses<br />
+	 </h1>
+	 
+        <p class="slide-sub">
+          From mobile apps to full-scale enterprise platforms — we turn bold ideas into
+          impactful digital realities, on time, every time.
+        </p>
+        <div class="slide-cta-group">
+          <a href="#services" class="btn-primary">Our Services <span>↗</span></a>
+          <a href="#case-studies" class="btn-ghost">View Case Studies</a>
+        </div>
+        <div class="slide-tagline">50+ projects delivered across 4 countries.</div>
+      </div>
+    </div>
+ 
+    <!-- Slide 3 -->
+    <div class="slide" data-bg="images/hero3.jfif">
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <div class="slide-eyebrow">Cloud · DevOps · IT Consulting</div>
+        <h1 class="slide-headline">
+          Digital Frontier
+		  Navigate Tomorrow's<br />
+		  with Confidence<br />
+        </h1>
+        <p class="slide-sub">
+          Expert IT consulting and cloud-managed services that align your technology
+          strategy with your business goals — at scale.
+        </p>
+        <div class="slide-cta-group">
+          <a href="#contact" class="btn-primary">Start a Conversation <span>↗</span></a>
+          <a href="#about" class="btn-ghost">About Us</a>
+        </div>
+        <div class="slide-tagline">India · USA · Singapore · Australia</div>
+      </div>
+    </div>
+ 
+    <!-- Arrow controls -->
+    <button class="slide-arrow slide-arrow--prev" id="slidePrev" aria-label="Previous slide">&#8249;</button>
+    <button class="slide-arrow slide-arrow--next" id="slideNext" aria-label="Next slide">&#8250;</button>
+ 
+    <!-- Dot indicators -->
+    <div class="slide-dots" id="slideDots">
+      <span class="slide-dot active" data-slide="0"></span>
+      <span class="slide-dot" data-slide="1"></span>
+      <span class="slide-dot" data-slide="2"></span>
+    </div>
+ 
+    <!-- Stats overlay bar at bottom -->
+    <div class="hero-stats-bar">
+      <div class="hero-stat"><span class="hs-num">50+</span><span class="hs-label">Projects Delivered</span></div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat"><span class="hs-num">15+</span><span class="hs-label">Global Clients</span></div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat"><span class="hs-num">4</span><span class="hs-label">Countries Served</span></div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat"><span class="hs-num">100%</span><span class="hs-label">On-Time Delivery</span></div>
+    </div>
+  </section>
+ 
+  <!-- =========================================================
+       STATS BAND
+  ========================================================= -->
+  <section class="stats-band" id="stats">
+    <div class="container">
+      <p class="stats-eyebrow">Impact that compounds across industries</p>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-number" data-target="50" data-suffix="%">0%</span>
+          <span class="stat-label">Faster Delivery vs Industry Standard</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="15" data-suffix="+">0+</span>
+          <span class="stat-label">Global Clients Trusted</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="4" data-suffix="">0</span>
+          <span class="stat-label">Countries Served</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="100" data-suffix="%">0%</span>
+          <span class="stat-label">On-Time Project Delivery</span>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- =========================================================
+       ABOUT
+  ========================================================= -->
+  <section class="about section" id="about">
+    <div class="container about-grid">
+      <div class="about-left reveal">
+        <span class="section-eyebrow">[01] About IdeaGenSys</span>
+        <h2 class="section-heading">Building future-ready digital solutions for ambitious businesses</h2>
+        <p class="section-body">
+          At IdeaGenSys, we drive innovation to keep you ahead. As a dynamic web applications and IT consulting firm, we deliver smart, scalable, and cost-effective digital solutions. Our expert team blends technical skill with strategic insight to help businesses grow and thrive.
+        </p>
+        <p class="section-body">
+          From custom software to full-scale consulting, we turn bold ideas into impactful realities — on time, every time. Founded in 2023, we operate across India, USA, Singapore, and Australia.
+        </p>
+        <a href="#contact" class="btn-primary">Partner with Us <span>↗</span></a>
+      </div>
+      <div class="about-right reveal reveal--right">
+        <div class="about-badges">
+          <div class="badge">
+            <span class="badge-icon">🌐</span>
+            <div>
+              <span class="badge-num">4</span>
+              <span class="badge-txt">Global Offices</span>
+            </div>
+          </div>
+          <div class="badge">
+            <span class="badge-icon">📱</span>
+            <div>
+              <span class="badge-num">50+</span>
+              <span class="badge-txt">Apps Developed</span>
+            </div>
+          </div>
+          <div class="badge">
+            <span class="badge-icon">⭐</span>
+            <div>
+              <span class="badge-num">4.9</span>
+              <span class="badge-txt">Client Rating</span>
+            </div>
+          </div>
+          <div class="badge">
+            <span class="badge-icon">🤝</span>
+            <div>
+              <span class="badge-num">15+</span>
+              <span class="badge-txt">Partners</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+ 
+  <!-- =========================================================
+       CLIENTS
+  ========================================================= -->
+  <section class="clients section" id="clients">
+    <div class="container">
+      <span class="section-eyebrow reveal">[02] Our Clients</span>
+      <h2 class="section-heading reveal">Trusted by 15+ companies across the globe</h2>
+     <!-- Row 1: scrolls left -->
+<div class="clients-track-wrap">
+  <div class="clients-track">
+    <div class="client-logo"><img src="clients/atlanta.jfif" alt="Atlanta System" /></div>
+    <div class="client-logo"><img src="clients/halks.jfif" alt="Chalksphere" /></div>
+    <div class="client-logo"><img src="clients/digitus.jfif" alt="Digitus" /></div>
+    <div class="client-logo"><img src="clients/ichest.jfif" alt="i-Chest" /></div>
+    <div class="client-logo"><img src="clients/indidigix.jfif" alt="IndiDigix" /></div>
+    <div class="client-logo"><img src="clients/sgebiz.jfif" alt="SGeBIZ" /></div>
+    <div class="client-logo"><img src="clients/syenr.jfif" alt="Syenr" /></div>
+    <div class="client-logo"><img src="clients/synthiot.jfif" alt="SynthIoT" /></div>
+    <!-- duplicate for seamless loop -->
+    <div class="client-logo"><img src="clients/atlanta.jfif" alt="Atlanta System" /></div>
+    <div class="client-logo"><img src="clients/halks.jfif" alt="Chalksphere" /></div>
+    <div class="client-logo"><img src="clients/digitus.jfif" alt="Digitus" /></div>
+    <div class="client-logo"><img src="clients/ichest.jfif" alt="i-Chest" /></div>
+    <div class="client-logo"><img src="clients/indidigix.jfif" alt="IndiDigix" /></div>
+    <div class="client-logo"><img src="clients/sgebiz.jfif" alt="SGeBIZ" /></div>
+    <div class="client-logo"><img src="clients/syenr.jfif" alt="Syenr" /></div>
+    <div class="client-logo"><img src="clients/synthiot.jfif" alt="SynthIoT" /></div>
+  </div>
+</div>
+
+<!-- Row 2: scrolls right -->
+<div class="clients-track-wrap">
+  <div class="clients-track clients-track--reverse">
+    <div class="client-logo"><img src="clients/TBI.jfif" alt="TBI" /></div>
+    <div class="client-logo"><img src="clients/tech.jfif" alt="TechnePlus" /></div>
+    <div class="client-logo"><img src="clients/warehousity.jfif" alt="Warehousity" /></div>
+    <div class="client-logo"><img src="clients/knn.jfif" alt="Kinspire" /></div>
+    <div class="client-logo"><img src="clients/easy_data_integration.jfif" alt="Easy Data Integration" /></div>
+    <div class="client-logo"><img src="clients/salon.jfif" alt="SalonSaathi" /></div>
+    <div class="client-logo"><img src="clients/insp.jfif" alt="Inspiron Labs" /></div>
+    <!-- duplicate for seamless loop -->
+    <div class="client-logo"><img src="clients/TBI.jfif" alt="TBI" /></div>
+    <div class="client-logo"><img src="clients/tech.jfif" alt="TechnePlus" /></div>
+    <div class="client-logo"><img src="clients/warehousity.jfif" alt="Warehousity" /></div>
+    <div class="client-logo"><img src="clients/knn.jfif" alt="Kinspire" /></div>
+    <div class="client-logo"><img src="clients/easy_data_integration.jfif" alt="Easy Data Integration" /></div>
+    <div class="client-logo"><img src="clients/salon.jfif" alt="SalonSaathi" /></div>
+    <div class="client-logo"><img src="clients/insp.jfif" alt="Inspiron Labs" /></div>
+  </div>
+</div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- =========================================================
+       SERVICES
+  ========================================================= -->
+  <section class="services section" id="services">
+    <div class="container">
+      <span class="section-eyebrow reveal">[03] What We Do</span>
+      <h2 class="section-heading reveal">Navigate Tomorrow's Digital Frontier <br />with Today's Most Innovative Solutions</h2>
+      <div class="services-grid">
+ 
+        <div class="service-card reveal" data-index="1">
+          <div class="service-num">01</div>
+          <div class="service-icon">📱</div>
+          <h3 class="service-title">Mobile App Development</h3>
+          <p class="service-desc">Tailored mobile solutions combining responsive design with intuitive functionality to maximize user engagement across iOS and Android.</p>
+          <div class="service-tags"><span>iOS</span><span>Android</span><span>Flutter</span><span>React Native</span></div>
+        </div>
+ 
+        <div class="service-card reveal" data-index="2">
+          <div class="service-num">02</div>
+          <div class="service-icon">💻</div>
+          <h3 class="service-title">Software Development</h3>
+          <p class="service-desc">Custom software solutions and system upgrades that streamline operations, reduce complexity, and drive continuous innovation.</p>
+          <div class="service-tags"><span>SaaS</span><span>API Dev</span><span>Microservices</span><span>ERP</span></div>
+        </div>
+ 
+        <div class="service-card reveal" data-index="3">
+          <div class="service-num">03</div>
+          <div class="service-icon">🔄</div>
+          <h3 class="service-title">Digital Transformation</h3>
+          <p class="service-desc">Transforming legacy systems into agile, modern solutions that drive business growth and maintain competitive edge in rapidly evolving markets.</p>
+          <div class="service-tags"><span>Legacy Migration</span><span>Cloud-Native</span><span>Agile</span></div>
+        </div>
+ 
+        <div class="service-card reveal" data-index="4">
+          <div class="service-num">04</div>
+          <div class="service-icon">💡</div>
+          <h3 class="service-title">Ideation & Design Strategy</h3>
+          <p class="service-desc">Strategic ideation and design processes ensuring your digital products are functional, user-resonant, and market-ready from day one.</p>
+          <div class="service-tags"><span>UX/UI</span><span>Prototyping</span><span>Design Systems</span></div>
+        </div>
+ 
+        <div class="service-card reveal" data-index="5">
+          <div class="service-num">05</div>
+          <div class="service-icon">🧠</div>
+          <h3 class="service-title">IT Consulting</h3>
+          <p class="service-desc">Expert IT consulting guiding organizations through complex technology decisions with seamless alignment between IT strategies and business goals.</p>
+          <div class="service-tags"><span>IT Strategy</span><span>Architecture</span><span>Advisory</span></div>
+        </div>
+ 
+        <div class="service-card reveal" data-index="6">
+          <div class="service-num">06</div>
+          <div class="service-icon">⚙️</div>
+          <h3 class="service-title">DevOps</h3>
+          <p class="service-desc">Streamlined development and operations to accelerate project timelines, improve product quality, and enable rapid, reliable deployments.</p>
+          <div class="service-tags"><span>CI/CD</span><span>Docker</span><span>Kubernetes</span><span>AWS</span></div>
+        </div>
+ 
+        <div class="service-card reveal" data-index="7">
+          <div class="service-num">07</div>
+          <div class="service-icon">☁️</div>
+          <h3 class="service-title">Cloud Managed Services</h3>
+          <p class="service-desc">Comprehensive management of your cloud infrastructure ensuring optimal performance, robust security, and cost-efficiency at scale.</p>
+          <div class="service-tags"><span>AWS</span><span>Azure</span><span>GCP</span><span>Monitoring</span></div>
+        </div>
+ 
+        <div class="service-card service-card--cta reveal" data-index="8">
+          <div class="service-cta-inner">
+            <p class="service-cta-label">Ready to transform your business?</p>
+            <h3 class="service-cta-heading">Let's build something remarkable together.</h3>
+            <a href="#contact" class="btn-primary">Start a Conversation <span>↗</span></a>
+          </div>
+        </div>
+ 
+      </div>
+    </div>
+  </section>
+ 
+  <!-- =========================================================
+       INDUSTRIES
+  ========================================================= -->
+  <section class="industries section" id="industries">
+    <div class="container">
+      <span class="section-eyebrow reveal">[04] Industries</span>
+      <h2 class="section-heading reveal">Delivering Excellence Across Industries </h2>
+      <p class="section-subhead reveal">Our evolving technology solutions gain trust and credibility across diverse industries. We adapt and deliver solutions that make a meaningful difference.</p>
+      <div class="industries-grid">
+        <div class="ind-chip reveal"><span>📦</span> Custom App</div>
+        <div class="ind-chip reveal"><span>🍔</span> Food Delivery</div>
+        <div class="ind-chip reveal"><span>🛍️</span> E-Commerce</div>
+        <div class="ind-chip reveal"><span>🏦</span> BFSI</div>
+        <div class="ind-chip reveal"><span>🏢</span> Enterprise Apps</div>
+        <div class="ind-chip reveal"><span>🚀</span> SaaS</div>
+        <div class="ind-chip reveal"><span>🏥</span> Healthcare</div>
+        <div class="ind-chip reveal"><span>📚</span> Education</div>
+        <div class="ind-chip reveal"><span>✈️</span> Travel</div>
+        <div class="ind-chip reveal"><span>🏠</span> Real Estate</div>
+        <div class="ind-chip reveal"><span>💬</span> Social App</div>
+        <div class="ind-chip reveal"><span>🚗</span> Taxi Booking</div>
+        <div class="ind-chip reveal"><span>⚽</span> Sports</div>
+        <div class="ind-chip reveal"><span>🌐</span> MetaVerse</div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- =========================================================
+       TECHNOLOGIES
+  ========================================================= -->
+  <section class="tech-section section" id="technologies">
+    <div class="container">
+      <span class="section-eyebrow reveal">[05] Tech Stack</span>
+      <h2 class="section-heading reveal">Technologies We Excel At</h2>
+
+     <div class="tech-logos-track-wrap">
+  <!-- Row 1: scrolls left -->
+<div class="tech-logos-track-wrap">
+  <div class="tech-logos-track">
+    <img src="images/Angular.jpg" alt="Angular" class="tech-logo-img" />
+    <img src="images/aws.jfif" alt="AWS" class="tech-logo-img" />
+    <img src="images/docker.jfif" alt="Docker" class="tech-logo-img" />
+    <img src="images/flutter.jfif" alt="Flutter" class="tech-logo-img" />
+    <img src="images/java.jfif" alt="Java" class="tech-logo-img" />
+    <img src="images/MySQL.jfif" alt="MySQL" class="tech-logo-img" />
+    <img src="images/next.jfif" alt="Next.js" class="tech-logo-img" />
+    <img src="images/php.jfif" alt="PHP" class="tech-logo-img" />
+    <img src="images/postsql.jfif" alt="PostgreSQL" class="tech-logo-img" />
+    <img src="images/Python.jfif" alt="Python" class="tech-logo-img" />
+    <!-- duplicate for loop -->
+    <img src="images/Angular.jpg" alt="Angular" class="tech-logo-img" />
+    <img src="images/aws.jfif" alt="AWS" class="tech-logo-img" />
+    <img src="images/docker.jfif" alt="Docker" class="tech-logo-img" />
+    <img src="images/flutter.jfif" alt="Flutter" class="tech-logo-img" />
+    <img src="images/java.jfif" alt="Java" class="tech-logo-img" />
+    <img src="images/MySQL.jfif" alt="MySQL" class="tech-logo-img" />
+    <img src="images/next.jfif" alt="Next.js" class="tech-logo-img" />
+    <img src="images/php.jfif" alt="PHP" class="tech-logo-img" />
+    <img src="images/postsql.jfif" alt="PostgreSQL" class="tech-logo-img" />
+    <img src="images/Python.jfif" alt="Python" class="tech-logo-img" />
+  </div>
+</div>
+
+<!-- Row 2: scrolls right (reverse) -->
+<div class="tech-logos-track-wrap">
+  <div class="tech-logos-track tech-logos-track--reverse">
+    <img src="images/React.jfif" alt="React" class="tech-logo-img" />
+    <img src="images/spring.jfif" alt="Spring Boot" class="tech-logo-img" />
+    <img src="images/tailwind.jfif" alt="Tailwind CSS" class="tech-logo-img" />
+    <img src="images/type.jfif" alt="TypeScript" class="tech-logo-img" />
+    <img src="images/Vue.jfif" alt="Vue" class="tech-logo-img" />
+    <img src="images/Microsoft-Azure-Logo.jfif" alt="Azure" class="tech-logo-img" />
+    <img src="images/firebase.jfif" alt="Firebase" class="tech-logo-img" />
+    <img src="images/fastapi.jfif" alt="FastAPI" class="tech-logo-img" />
+    <img src="images/GitHub.jfif" alt="GitHub" class="tech-logo-img" />
+    <img src="images/google cloud1.jfif" alt="Google Cloud" class="tech-logo-img" />
+    <!-- duplicate for loop -->
+    <img src="images/React.jfif" alt="React" class="tech-logo-img" />
+    <img src="images/spring.jfif" alt="Spring Boot" class="tech-logo-img" />
+    <img src="images/tailwind.jfif" alt="Tailwind CSS" class="tech-logo-img" />
+    <img src="images/type.jfif" alt="TypeScript" class="tech-logo-img" />
+    <img src="images/Vue.jfif" alt="Vue" class="tech-logo-img" />
+    <img src="images/Microsoft-Azure-Logo.jfif" alt="Azure" class="tech-logo-img" />
+    <img src="images/firebase.jfif" alt="Firebase" class="tech-logo-img" />
+    <img src="images/fastapi.jfif" alt="FastAPI" class="tech-logo-img" />
+    <img src="images/GitHub.jfif" alt="GitHub" class="tech-logo-img" />
+    <img src="images/google cloud1.jfif" alt="Google Cloud" class="tech-logo-img" />
+  </div>
+</div>
+</div>
+    </div>
+  </section>
+ 
+  <!-- =========================================================
+       CASE STUDIES
+  ========================================================= -->
+  <section class="case-studies section" id="case-studies">
+    <div class="container">
+      <span class="section-eyebrow reveal">[06] Case Studies</span>
+      <h2 class="section-heading reveal">Where Technology, Design, and Strategy Converge</h2>
+      <div class="cases-grid">
+ 
+        <div class="case-card reveal">
+          <div class="case-tag">Automation</div>
+          <div class="case-date">2024</div>
+          <h3 class="case-title">Operational Efficiency at Amphenol FCI</h3>
+          <p class="case-desc">Built a secure Flutter app with Zebra scanner support, auto-filled fields, admin login, and instant Excel export for 4L+ entries — eliminating manual barcode logging.</p>
+          <div class="case-client">Client: Digitus</div>
+          <a href="#contact" class="case-link">View Details →</a>
+        </div>
+ 
+        <div class="case-card reveal">
+          <div class="case-tag">Integration</div>
+          <div class="case-date">2024</div>
+          <h3 class="case-title">C5 Integration for SGeBIZ</h3>
+          <p class="case-desc">Delivered a seamless C5 integration that significantly enhanced SGeBIZ's procurement platform, improving data flow, compliance, and operational reliability.</p>
+          <div class="case-client">Client: SGeBIZ</div>
+          <a href="#contact" class="case-link">View Details →</a>
+        </div>
+ 
+        <div class="case-card reveal">
+          <div class="case-tag">App Modernization</div>
+          <div class="case-date">2023</div>
+          <h3 class="case-title">App Conversion & Platform Upgrade</h3>
+          <p class="case-desc">Successfully converted and upgraded IAV's application, exceeding expectations with high-quality output delivered at a highly competitive price point.</p>
+          <div class="case-client">Client: IAV</div>
+          <a href="#contact" class="case-link">View Details →</a>
+        </div>
+ 
+        <div class="case-card reveal">
+          <div class="case-tag">Platform Revamp</div>
+          <div class="case-date">2024</div>
+          <h3 class="case-title">TBIL Platform Revamp</h3>
+          <p class="case-desc">Complete platform revamp for Taylor Business Institute — enhancing performance, usability, and overall user experience with measurable improvement in engagement.</p>
+          <div class="case-client">Client: Taylor Business Institute</div>
+          <a href="#contact" class="case-link">View Details →</a>
+        </div>
+ 
+        <div class="case-card reveal">
+          <div class="case-tag">Warehouse Tech</div>
+          <div class="case-date">2024</div>
+          <h3 class="case-title">Warehouse Management System</h3>
+          <p class="case-desc">Custom WMS for Warehousity — integrating inventory tracking, barcode scanning, and real-time analytics to reduce warehouse errors by over 40%.</p>
+          <div class="case-client">Client: Warehousity</div>
+          <a href="#contact" class="case-link">View Details →</a>
+        </div>
+ 
+        <div class="case-card case-card--all reveal">
+          <div class="case-all-inner">
+            <p>Ready to be our next success story?</p>
+            <h3>Let's build something impactful.</h3>
+            <a href="#contact" class="btn-primary">Start a Conversation <span>↗</span></a>
+          </div>
+        </div>
+ 
+      </div>
+    </div>
+  </section>
+ 
+  <!-- =========================================================
+       TESTIMONIALS
+  ========================================================= -->
+  <section class="testimonials section" id="testimonials">
+    <div class="container">
+      <span class="section-eyebrow reveal">[07] Testimonials</span>
+      <h2 class="section-heading reveal">What Our Clients Say</h2>
+      <div class="testi-slider" id="testiSlider">
+        <div class="testi-track" id="testiTrack">
+ 
+          <div class="testi-card">
+            <div class="testi-quote">"</div>
+            <p class="testi-text">We were thoroughly impressed by the team's professionalism and expertise. The apps were delivered on time, performed flawlessly, and perfectly matched our business needs. Truly exceptional work — highly recommended.</p>
+            <div class="testi-author">
+              <div class="testi-avatar">ST</div>
+              <div>
+                <div class="testi-name">Sojan Thomas</div>
+                <div class="testi-role">DigitUS</div>
+              </div>
+            </div>
+          </div>
+ 
+          <div class="testi-card">
+            <div class="testi-quote">"</div>
+            <p class="testi-text">IdeaGenSys did an outstanding job converting our application. The team exceeded our expectations and delivered a high-quality application at a highly competitive price.</p>
+            <div class="testi-author">
+              <div class="testi-avatar">SN</div>
+              <div>
+                <div class="testi-name">Sandeep Narula</div>
+                <div class="testi-role">IAV, Director</div>
+              </div>
+            </div>
+          </div>
+ 
+          <div class="testi-card">
+            <div class="testi-quote">"</div>
+            <p class="testi-text">We thoroughly enjoyed working with IdeaGenSys. They provide excellent service and have technically sound, highly professional developers who helped us solve many complex challenges.</p>
+            <div class="testi-author">
+              <div class="testi-avatar">VS</div>
+              <div>
+                <div class="testi-name">Vinay Soni</div>
+                <div class="testi-role">Technology Evangelist</div>
+              </div>
+            </div>
+          </div>
+ 
+          <div class="testi-card">
+            <div class="testi-quote">"</div>
+            <p class="testi-text">Fantastic work on the successful delivery of the C5 integration for SGeBIZ. The team's professionalism, technical expertise, and timely execution made a significant impact.</p>
+            <div class="testi-author">
+              <div class="testi-avatar">SB</div>
+              <div>
+                <div class="testi-name">Suyog Bagul</div>
+                <div class="testi-role">SGeBIZ, Technology Director</div>
+              </div>
+            </div>
+          </div>
+ 
+          <div class="testi-card">
+            <div class="testi-quote">"</div>
+            <p class="testi-text">Excellent work on the TBIL revamp! The team delivered with precision — enhancing performance, usability, and the overall user experience. Your attention to detail and commitment made a real difference.</p>
+            <div class="testi-author">
+              <div class="testi-avatar">JP</div>
+              <div>
+                <div class="testi-name">Janice Parker</div>
+                <div class="testi-role">Taylor Business Institute, President</div>
+              </div>
+            </div>
+          </div>
+ 
+        </div>
+        <div class="testi-controls">
+          <button class="testi-btn" id="testiPrev">←</button>
+          <div class="testi-dots" id="testiDots"></div>
+          <button class="testi-btn" id="testiNext">→</button>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- =========================================================
+       PROCESS
+  ========================================================= -->
+  <section class="process section" id="process">
+    <div class="container">
+      <span class="section-eyebrow reveal">[08] How We Work</span>
+      <h2 class="section-heading reveal">Let's Spark a Transformative Conversation</h2>
+      <div class="process-steps">
+        <div class="process-step reveal">
+          <div class="process-step-num">01</div>
+          <div class="process-step-icon">📋</div>
+          <h3>Contact Us</h3>
+          <p>Fill out the contact form and schedule a consultation call with our AI experts.</p>
+        </div>
+        <div class="process-connector reveal"></div>
+        <div class="process-step reveal">
+          <div class="process-step-num">02</div>
+          <div class="process-step-icon">💬</div>
+          <h3>Get A Consultation</h3>
+          <p>Discuss your project idea with our consultants to understand the intricacies of your project.</p>
+        </div>
+        <div class="process-connector reveal"></div>
+        <div class="process-step reveal">
+          <div class="process-step-num">03</div>
+          <div class="process-step-icon">📊</div>
+          <h3>Get A Quotation</h3>
+          <p>Based on your project, we share a detailed proposal with cost and timeline estimates.</p>
+        </div>
+        <div class="process-connector reveal"></div>
+        <div class="process-step reveal">
+          <div class="process-step-num">04</div>
+          <div class="process-step-icon">🚀</div>
+          <h3>Project Kickoff</h3>
+          <p>Sign the contract and form a partnership with us to kick-start your project.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- =========================================================
+     BLOGS
+========================================================= -->
+<section class="blogs section" id="blogs">
+  <div class="container">
+    <span class="section-eyebrow reveal">[07] Insights & Blogs</span>
+    <h2 class="section-heading reveal">Ideas, Trends & Perspectives from Our Team</h2>
+    <div class="blogs-grid">
+
+      <div class="blog-card reveal">
+        <div class="blog-img"><img src="blogs/ai.jfif" alt="The Rise of AI in Custom Software Development" /></div>
+        <div class="blog-content">
+          <div class="blog-meta"><span class="blog-tag">AI</span><span class="blog-date">Jun 02, 2026</span></div>
+          <h3 class="blog-title">The Rise of AI in Custom Software Development</h3>
+          <p class="blog-desc">How AI-driven tools are reshaping the way businesses design, build, and scale software products.</p>
+          <a href="#contact" class="blog-link">Read More →</a>
+        </div>
+      </div>
+
+      <div class="blog-card reveal">
+        <div class="blog-img"><img src="blogs/dg.jfif" alt="Why Digital Transformation Is No Longer Optional" /></div>
+        <div class="blog-content">
+          <div class="blog-meta"><span class="blog-tag">Strategy</span><span class="blog-date">May 28, 2026</span></div>
+          <h3 class="blog-title">Why Digital Transformation Is No Longer Optional</h3>
+          <p class="blog-desc">A look at why legacy systems are holding businesses back — and how modernization drives growth.</p>
+          <a href="#contact" class="blog-link">Read More →</a>
+        </div>
+      </div>
+
+      <div class="blog-card reveal">
+        <div class="blog-img"><img src="blogs/cm.jfif" alt="Cloud Migration: A Step-by-Step Guide" /></div>
+        <div class="blog-content">
+          <div class="blog-meta"><span class="blog-tag">Cloud</span><span class="blog-date">May 20, 2026</span></div>
+          <h3 class="blog-title">Cloud Migration: A Step-by-Step Guide for Enterprises</h3>
+          <p class="blog-desc">Key planning steps, common pitfalls, and best practices for a smooth move to the cloud.</p>
+          <a href="#contact" class="blog-link">Read More →</a>
+        </div>
+      </div>
+
+      <div class="blog-card reveal">
+        <div class="blog-img"><img src="blogs/Mobile.jfif" alt="Mobile App Trends to Watch in 2026" /></div>
+        <div class="blog-content">
+          <div class="blog-meta"><span class="blog-tag">Mobile</span><span class="blog-date">May 12, 2026</span></div>
+          <h3 class="blog-title">Mobile App Trends to Watch in 2026</h3>
+          <p class="blog-desc">From AI assistants to super-apps — the trends shaping mobile experiences this year.</p>
+          <a href="#contact" class="blog-link">Read More →</a>
+        </div>
+      </div>
+
+      <div class="blog-card reveal">
+        <div class="blog-img"><img src="blogs/mic.jfif" alt="Building Scalable Microservices Architecture" /></div>
+        <div class="blog-content">
+          <div class="blog-meta"><span class="blog-tag">Architecture</span><span class="blog-date">Apr 30, 2026</span></div>
+          <h3 class="blog-title">Building Scalable Microservices Architecture</h3>
+          <p class="blog-desc">Practical patterns for designing systems that grow with your business without breaking.</p>
+          <a href="#contact" class="blog-link">Read More →</a>
+        </div>
+      </div>
+
+      <div class="blog-card reveal">
+        <div class="blog-img"><img src="blogs/dev.jfif" alt="DevOps Best Practices for Faster Releases" /></div>
+        <div class="blog-content">
+          <div class="blog-meta"><span class="blog-tag">DevOps</span><span class="blog-date">Apr 18, 2026</span></div>
+          <h3 class="blog-title">DevOps Best Practices for Faster, Safer Releases</h3>
+          <p class="blog-desc">How CI/CD pipelines and automation cut release cycles from weeks to days.</p>
+          <a href="#contact" class="blog-link">Read More →</a>
+        </div>
+      </div>
+
+      <div class="blog-card reveal">
+        <div class="blog-img"><img src="blogs/cons.jfif" alt="How IT Consulting Drives Business Growth" /></div>
+        <div class="blog-content">
+          <div class="blog-meta"><span class="blog-tag">Consulting</span><span class="blog-date">Apr 05, 2026</span></div>
+          <h3 class="blog-title">How IT Consulting Drives Business Growth</h3>
+          <p class="blog-desc">Why the right technology advice early on can save months of rework later.</p>
+          <a href="#contact" class="blog-link">Read More →</a>
+        </div>
+      </div>
+
+      <div class="blog-card reveal">
+        <div class="blog-img"><img src="blogs/fr.jfif" alt="Flutter vs React Native: Which to Choose" /></div>
+        <div class="blog-content">
+          <div class="blog-meta"><span class="blog-tag">Mobile</span><span class="blog-date">Mar 22, 2026</span></div>
+          <h3 class="blog-title">Flutter vs React Native: Which Should You Choose?</h3>
+          <p class="blog-desc">A practical comparison to help you pick the right framework for your next app.</p>
+          <a href="#contact" class="blog-link">Read More →</a>
+        </div>
+      </div>
+
+      <div class="blog-card reveal">
+  <div class="blog-img"><img src="blogs/cyber.jfif" alt="Top Cybersecurity Practices for Growing Businesses" /></div>
+  <div class="blog-content">
+    <div class="blog-meta"><span class="blog-tag">Security</span><span class="blog-date">Feb 25, 2026</span></div>
+    <h3 class="blog-title">Top Cybersecurity Practices for Growing Businesses</h3>
+    <p class="blog-desc">Simple, high-impact steps every growing company should take to protect data and customer trust.</p>
+    <a href="#contact" class="blog-link">Read More →</a>
+  </div>
+</div>
+
+    </div>
+  </div>
+</section>
+  <!-- =========================================================
+       CONTACT
+  ========================================================= -->
+  <section class="contact section" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-left reveal">
+        <span class="section-eyebrow">[09] Get In Touch</span>
+        <h2 class="section-heading">Ready to transform your business?</h2>
+        <p class="section-body">In just 10 minutes you'll get a response. Our experts are ready to provide a free development blueprint, tentative budget, and estimated time-to-market.</p>
+        <div class="contact-info">
+          <div class="contact-info-item">
+            <span class="ci-icon">📧</span>
+            <a href="mailto:sales@ideagensys.com">sales@ideagensys.com</a>
+          </div>
+          <div class="contact-info-item">
+            <span class="ci-icon">📞</span>
+            <a href="tel:+12243531975">+1 224 353 1975</a>
+          </div>
+		  <div class="contact-info-item">
+    <span class="ci-icon">🔗</span>
+    <a href="https://www.linkedin.com/company/ideagensyss" target="_blank">LinkedIn</a>
+  </div>
+        </div>
+        <div class="contact-offices">
+          <div class="co-item"><strong>🇮🇳 India</strong><br/>AECS Layout, Brookfield, Bangalore</div>
+          <div class="co-item"><strong>🇺🇸 USA</strong><br/>1486 Circle Ct, Elk Grove Village, IL</div>
+          <div class="co-item"><strong>🇸🇬 Singapore</strong><br/>#12-15, Yishun Emerald, 26 Canberra Drive</div>
+          <div class="co-item"><strong>🇦🇺 Australia</strong><br/>Unit 1304, 220 Pacific Highway, Crows Nest</div>
+        </div>
+      </div>
+      <div class="contact-right reveal reveal--right">
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" placeholder="John Doe" required />
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" placeholder="john@company.com" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" placeholder="+1 234 567 890" />
+            </div>
+            <div class="form-group">
+              <label>Budget Range</label>
+              <select>
+                <option value="">Select Budget</option>
+                <option>Under $1,000</option>
+                <option>$1,000 – $5,000</option>
+                <option>$5,000 – $10,000</option>
+                <option>$10,000 – $50,000</option>
+                <option>Above $50,000</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group form-group--full">
+            <label>Project Description</label>
+            <textarea rows="4" placeholder="Tell us about your project idea..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary btn-full">Send Message <span>↗</span></button>
+          <p class="form-note">✅ In just 10 min you will get a response.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- =========================================================
+       FOOTER
+  ========================================================= -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <p class="footer-tagline">Got a game-changing idea or a tough challenge to tackle? Let's connect and make it happen!</p>
+      
+      </div>
+      <div class="footer-links-col">
+        <h4>About</h4>
+        <a href="#about">Our Company</a>
+        <a href="#about">Core Team</a>
+        <a href="#about">Careers</a>
+        <a href="#process">How We Work</a>
+      </div>
+      <div class="footer-links-col">
+        <h4>Services</h4>
+        <a href="#services">Software Development</a>
+        <a href="#services">Mobile App Development</a>
+        <a href="#services">DevOps</a>
+        <a href="#services">Digital Transformation</a>
+        <a href="#services">IT Consulting</a>
+      </div>
+      <div class="footer-links-col">
+        <h4>Industries</h4>
+        <a href="#industries">Healthcare</a>
+        <a href="#industries">Education</a>
+        <a href="#industries">Finance</a>
+        <a href="#industries">E-Commerce</a>
+        <a href="#industries">Logistics</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 IdeaGenSys Software Private Limited. All Rights Reserved.</p>
+    </div>
+  </footer>
+ 
+  <script src="script.js"></script>
+</body>
+</html>
