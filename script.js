@@ -126,6 +126,8 @@ function handleNavScroll() {
       spans.forEach(function(s) { s.style.transform = ''; s.style.opacity = ''; });
     }
   });
+  
+  
 
   navLinks.querySelectorAll('.nav-link').forEach(function(link) {
     link.addEventListener('click', function() {
@@ -334,5 +336,194 @@ function handleNavScroll() {
       }
     });
   });
+  
+  /* ── DETAIL MODAL (Case Studies + Blogs) ──────────────────── */
+var detailContent = {
+
+  'cs-amphenol': {
+    tag: 'Automation', date: '2024', client: 'Client: Digitus',
+    title: 'Operational Efficiency at Amphenol FCI',
+    body: `<p>Amphenol FCI's quality team was logging thousands of component barcodes by hand every shift, leading to slow turnaround and frequent transcription errors. IdeaGenSys built a secure Flutter application with native Zebra scanner integration to remove manual entry entirely.</p>
+    <p>The app auto-fills product and batch fields the moment a barcode is scanned, supports role-based admin login, and exports more than 4 lakh records to Excel in a single click for audit and reporting.</p>
+    <ul>
+      <li>Native Zebra hardware scanner integration</li>
+      <li>Auto-filled, validated data entry fields</li>
+      <li>Secure admin login with role management</li>
+      <li>One-click export of 4L+ records to Excel</li>
+    </ul>`
+  },
+
+  'cs-sgebiz': {
+    tag: 'Integration', date: '2024', client: 'Client: SGeBIZ',
+    title: 'C5 Integration for SGeBIZ',
+    body: `<p>SGeBIZ needed its procurement platform to communicate reliably with the C5 system used by its enterprise customers, without disrupting existing workflows or data integrity.</p>
+    <p>IdeaGenSys designed and delivered a seamless C5 integration layer that synchronizes purchase orders, supplier records, and approval workflows in near real time, improving compliance reporting and reducing manual reconciliation.</p>
+    <ul>
+      <li>Real-time data sync between SGeBIZ and C5</li>
+      <li>Improved procurement compliance and audit trails</li>
+      <li>Reduced manual reconciliation effort</li>
+      <li>Stable, monitored integration pipeline</li>
+    </ul>`
+  },
+
+  'cs-iav': {
+    tag: 'App Modernization', date: '2023', client: 'Client: IAV',
+    title: 'App Conversion & Platform Upgrade',
+    body: `<p>IAV's existing application was built on an aging framework that limited new feature development and made cross-platform support difficult. The goal was a full conversion to a modern stack without losing existing functionality or data.</p>
+    <p>The IdeaGenSys team rebuilt the application on a modern framework, restructured the codebase for maintainability, and upgraded the underlying platform — delivering the project at a highly competitive price point while exceeding the client's quality expectations.</p>
+    <ul>
+      <li>Full migration to a modern application framework</li>
+      <li>Improved performance and maintainability</li>
+      <li>Zero data loss during conversion</li>
+      <li>Delivered ahead of budget expectations</li>
+    </ul>`
+  },
+
+  'cs-tbil': {
+    tag: 'Platform Revamp', date: '2024', client: 'Client: Taylor Business Institute',
+    title: 'TBIL Platform Revamp',
+    body: `<p>Taylor Business Institute's online platform had grown organically over the years and needed a structural overhaul to support more students and a smoother day-to-day experience for staff and faculty.</p>
+    <p>IdeaGenSys carried out a complete platform revamp — modernizing the UI, optimizing backend performance, and reworking core user journeys — resulting in measurable improvements in load times and overall engagement.</p>
+    <ul>
+      <li>Modernized UI/UX across the platform</li>
+      <li>Faster page loads and backend performance</li>
+      <li>Streamlined student and staff workflows</li>
+      <li>Measurable increase in engagement</li>
+    </ul>`
+  },
+
+  'cs-warehousity': {
+    tag: 'Warehouse Tech', date: '2024', client: 'Client: Warehousity',
+    title: 'Warehouse Management System',
+    body: `<p>Warehousity needed a single system to track inventory across multiple sites, reduce picking errors, and give managers real-time visibility into stock movement.</p>
+    <p>IdeaGenSys built a custom Warehouse Management System combining barcode scanning, automated inventory tracking, and live analytics dashboards — cutting warehouse errors by over 40% within the first months of rollout.</p>
+    <ul>
+      <li>Multi-site inventory tracking</li>
+      <li>Barcode-based stock movement logging</li>
+      <li>Real-time analytics dashboards</li>
+      <li>40%+ reduction in warehouse errors</li>
+    </ul>`
+  },
+
+  'blog-ai': {
+    tag: 'AI', date: 'Jun 02, 2026',
+    title: 'The Rise of AI in Custom Software Development',
+    body: `<p>AI is no longer a bolt-on feature — it's becoming part of how software gets designed, built, and maintained. Teams are using AI-assisted tools for code generation, automated testing, and even early-stage product ideation, compressing timelines that used to take weeks into days.</p>
+    <p>For businesses commissioning custom software, this shift means faster prototypes, more iterations within the same budget, and the ability to bake intelligent features — recommendations, automation, anomaly detection — directly into the core product rather than adding them later.</p>`
+  },
+
+  'blog-digital': {
+    tag: 'Strategy', date: 'May 28, 2026',
+    title: 'Why Digital Transformation Is No Longer Optional',
+    body: `<p>Legacy systems that once felt "good enough" are now the biggest source of friction for growing businesses — slow integrations, manual workarounds, and rising maintenance costs quietly eat into margins every quarter.</p>
+    <p>Digital transformation isn't about replacing everything at once. It's about identifying the systems causing the most drag, modernizing them in stages, and building a foundation that can absorb new tools and integrations without another costly overhaul.</p>`
+  },
+
+  'blog-cloud': {
+    tag: 'Cloud', date: 'May 20, 2026',
+    title: 'Cloud Migration: A Step-by-Step Guide for Enterprises',
+    body: `<p>A successful cloud migration starts long before any data moves — with an honest audit of current workloads, dependencies, and compliance requirements. Skipping this step is the most common reason migrations run over budget.</p>
+    <p>From there, a phased approach works best: migrate low-risk, high-value workloads first, validate performance and cost against on-prem baselines, then move critical systems with a tested rollback plan in place. Done right, the result is lower infrastructure costs, better scalability, and far less time spent on maintenance.</p>`
+  },
+
+  'blog-mobile': {
+    tag: 'Mobile', date: 'May 12, 2026',
+    title: 'Mobile App Trends to Watch in 2026',
+    body: `<p>Mobile apps in 2026 are leaning heavily into on-device AI assistants, hyper-personalized experiences, and "super-app" ecosystems where a single app handles payments, messaging, bookings, and more.</p>
+    <p>For businesses planning a new app, this means thinking beyond the MVP feature set — designing an architecture that can support AI-driven personalization and new integrations as user expectations continue to shift.</p>`
+  },
+
+  'blog-microservices': {
+    tag: 'Architecture', date: 'Apr 30, 2026',
+    title: 'Building Scalable Microservices Architecture',
+    body: `<p>Breaking a monolith into microservices solves some problems and creates new ones — service-to-service communication, data consistency, and deployment complexity all need deliberate design decisions from day one.</p>
+    <p>The teams that succeed start small: extract one well-bounded service at a time, invest early in observability and API contracts, and avoid splitting services along lines that don't match how the business actually changes over time.</p>`
+  },
+
+  'blog-devops': {
+    tag: 'DevOps', date: 'Apr 18, 2026',
+    title: 'DevOps Best Practices for Faster, Safer Releases',
+    body: `<p>Teams that release weekly (or daily) without increasing risk share a common thread: heavy investment in automated testing and CI/CD pipelines that catch problems before they reach production.</p>
+    <p>Combining automated builds, staged deployments, and rollback-ready infrastructure turns releases from high-stress events into routine, low-drama parts of the development cycle — freeing teams to ship improvements continuously rather than in big, risky batches.</p>`
+  },
+
+  'blog-itconsulting': {
+    tag: 'Consulting', date: 'Apr 05, 2026',
+    title: 'How IT Consulting Drives Business Growth',
+    body: `<p>The most expensive technology decisions are often the ones made without outside input — a platform choice that doesn't scale, an integration that locks a business into a single vendor, or an architecture that needs to be rebuilt within two years.</p>
+    <p>Bringing in experienced IT consultants early doesn't slow projects down — it prevents the months of rework that come from decisions made without a full picture of where the business is headed.</p>`
+  },
+
+  'blog-flutter': {
+    tag: 'Mobile', date: 'Mar 22, 2026',
+    title: 'Flutter vs React Native: Which Should You Choose?',
+    body: `<p>Both frameworks let you ship a single codebase to iOS and Android, but they make different trade-offs. Flutter renders its own UI layer, giving pixel-perfect consistency across platforms and strong performance for animation-heavy apps.</p>
+    <p>React Native leans on native components and a huge JavaScript ecosystem, which can mean faster onboarding for web teams and easier integration with existing JS tooling. The right choice usually comes down to your team's existing skills and how custom your UI needs to be.</p>`
+  },
+
+  'blog-cyber': {
+    tag: 'Security', date: 'Feb 25, 2026',
+    title: 'Top Cybersecurity Practices for Growing Businesses',
+    body: `<p>Most breaches at growing companies don't come from sophisticated attacks — they come from basic gaps: unpatched dependencies, shared credentials, and overly broad access permissions that nobody ever revisits.</p>
+    <p>A handful of foundational practices go a long way: enforce MFA everywhere, automate dependency and patch updates, run regular access reviews, and encrypt sensitive data both at rest and in transit. These steps cost far less than the trust (and revenue) lost in a breach.</p>`
+  }
+
+};
+
+var detailModal       = document.getElementById('detailModal');
+var detailModalClose  = document.getElementById('detailModalClose');
+var detailModalTag    = document.getElementById('detailModalTag');
+var detailModalDate   = document.getElementById('detailModalDate');
+var detailModalTitle  = document.getElementById('detailModalTitle');
+var detailModalClient = document.getElementById('detailModalClient');
+var detailModalBody   = document.getElementById('detailModalBody');
+
+function openDetailModal(key) {
+  var data = detailContent[key];
+  if (!data || !detailModal) return;
+
+  detailModalTag.textContent    = data.tag;
+  detailModalDate.textContent   = data.date;
+  detailModalTitle.textContent  = data.title;
+  detailModalClient.textContent = data.client || '';
+  detailModalClient.style.display = data.client ? '' : 'none';
+  detailModalBody.innerHTML     = data.body;
+
+  detailModal.classList.add('open');
+  document.body.classList.add('modal-open');
+}
+
+function closeDetailModal() {
+  detailModal.classList.remove('open');
+  document.body.classList.remove('modal-open');
+}
+
+document.querySelectorAll('[data-detail]').forEach(function (link) {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+    openDetailModal(this.dataset.detail);
+  });
+});
+
+if (detailModalClose) {
+  detailModalClose.addEventListener('click', closeDetailModal);
+}
+
+/* Close modal when "Start a Conversation" CTA inside it is clicked */
+var detailModalCta = document.querySelector('.detail-modal-cta');
+if (detailModalCta) {
+  detailModalCta.addEventListener('click', closeDetailModal);
+}
+
+if (detailModal) {
+  detailModal.addEventListener('click', function (e) {
+    if (e.target === detailModal) closeDetailModal();
+  });
+}
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape' && detailModal && detailModal.classList.contains('open')) {
+    closeDetailModal();
+  }
+});
 
 })();
