@@ -1643,6 +1643,13 @@ body.modal-open { overflow: hidden; }
   .hero-stat { padding: 0 2rem; }
   .slide { background-size: 52%; }
   .slide-content { left: 2rem; width: 46%; }
+
+  /* NEW — keep hero from getting too tall on smaller laptops/tablets */
+  .hero-slider {
+    height: 65vh;
+    min-height: 460px;
+    max-height: 680px;
+  }
 }
 
 @media (max-width: 900px) {
@@ -1661,6 +1668,13 @@ body.modal-open { overflow: hidden; }
   /* On tablet, let image cover more */
   .slide { background-size: 58%; }
   .slide-content { left: 2rem; width: 48%; padding-bottom: 30px; }
+
+  /* NEW — reduce hero height further on tablets/large phones */
+  .hero-slider {
+    height: 55vh;
+    min-height: 420px;
+    max-height: 600px;
+  }
 }
 .hero-stats-bar { display: none; }
 
